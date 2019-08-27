@@ -1,0 +1,109 @@
+
+import random
+import sys
+
+tahta=[i for i in range(0,12)]
+oyuncu, bilgisayar = '',''
+
+hareket=((1,7,3,9),(5,),(2,4,6,8),(10,8,11,12))
+# kazanma olcütleri
+kazanma=((0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6),(9,10,11),(3,6,9),(4,7,10),(5,8,12),(3,7,11),(5,7,9))
+# Tahta
+tab=range(1,13)      
+
+def print_tahta():
+    x=1
+    for i in tahta:
+        end = ' | '
+        if x%3 == 0:
+            end = ' \n'
+            if i != 1: end+='---------\n';
+        karakter=' '
+        if i in ('X','O'): karakter=i;
+        x+=1
+        print(karakter,end=end)
+        
+def select_karakter():
+    karakters=('X','O')
+    if random.randint(0,1) == 0:
+        return karakters[::-1]
+    return karakters
+
+def can_yürüme(brd, oyuncu, yürüme):
+    if yürüme in tab and brd[yürüme-1] == yürüme-1:
+        return True
+    return False
+
+def can_win(brd, oyuncu, yürüme):
+    places=[]
+    x=0
+    for i in brd:
+        if i == oyuncu: places.append(x);
+        x+=1
+    win=True
+    for tup in kazanma:
+        win=True
+        for ix in tup:
+            if brd[ix] != oyuncu:
+                win=False
+                break
+        if win == True:
+            break
+    return win
+
+def make_yürüme(brd, oyuncu, yürüme, undo=False):
+    if can_yürüme(brd, oyuncu, yürüme):
+        brd[yürüme-1] = oyuncu
+        win=can_win(brd, oyuncu, yürüme)
+        if undo:
+            brd[yürüme-1] = yürüme-1
+        return (True, win)
+    return (False, False)
+
+# Bilgisayar Yapılandırma
+def bilgisayar_yürüme():
+    yürüme=-1
+    # If I can win, others don't matter.
+    for i in range(1,13):
+        if make_yürüme(tahta, bilgisayar, i, True)[1]:
+            yürüme=i
+            break
+    if yürüme == -1:
+        # Sen kazanmaya yakınsan bilgisayar bloklamaya calıscak.
+        for i in range(1,13):
+            if make_yürüme(tahta, oyuncu, i, True)[1]:
+                yürüme=i
+                break
+    if yürüme == -1:
+        # Otherwise, try to take one of desired places.
+        for tup in hareket:
+            for mv in tup:
+                if yürüme == -1 and can_yürüme(tahta, bilgisayar, mv):
+                    yürüme=mv
+                    break
+    return make_yürüme(tahta, bilgisayar, yürüme)
+
+def space_exist():
+    return tahta.count('X') + tahta.count('O') != 13
+
+oyuncu, bilgisayar = select_karakter()
+print('Oyuncu  [%s] ve Bilgisayar [%s]' % (oyuncu, bilgisayar))
+sonuç='%%% Deuce ! %%%'
+while space_exist():
+    print_tahta()
+    print('# Sayiyi Giriniz : ', end='')
+    yürüme = int(input())
+    yürümed, won = make_yürüme(tahta, oyuncu, yürüme)
+    if not yürümed:
+        print(' >>Girilmis Sayi Tekrar Deneyiniz !')
+        continue
+    #
+    if won:
+        sonuç='*** Tebrikler ! Sen Kazandın ! ***'
+        break
+    elif bilgisayar_yürüme()[1]:
+        sonuç='=== Sen Kaybettin ! =='
+        break;
+
+print_tahta()
+print(sonuç)
