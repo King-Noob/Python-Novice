@@ -1,0 +1,62 @@
+
+
+
+
+"""             İnternetten Veri Cekme Ornegi                                      
+                     Doviz Euro Altin                       """
+
+from bs4 import BeautifulSoup
+from urllib.request import urlopen, Request
+
+def Dolar():
+    pasteURL = "https://dovizborsa.com/doviz/dolar"
+    data = urlopen(Request(pasteURL, headers={'User-Agent': 'Mozilla'})).read()
+    parse = BeautifulSoup(data,'html.parser')
+    for dolar in parse.find_all('span',{'class': "-sl-"}):
+        liste = list(dolar)
+        print("Güncel Dolar Kuru: " + str(liste))
+    for dolar in parse.find_all('span',{'class': "-cl-"}):
+        liste = list(dolar)
+        print("Dunku Kapanıs Dolar Kuru: " + str(liste))  
+        print('*************************')  
+        
+def Euro():
+    pasteURL = "https://dovizborsa.com/doviz/euro"
+    data = urlopen(Request(pasteURL, headers={'User-Agent': 'Mozilla'})).read()
+    parse = BeautifulSoup(data,'html.parser')
+    for euro in parse.find_all('span',{'class': "-sl-"}):
+        liste = list(euro)
+        print("Güncel Euro Kuru: " + str(liste))  
+    for euro in parse.find_all('span',{'class': "-cl-"}):
+        liste = list(euro)
+        print("Dunku Kapanıs Euro Kuru: " + str(liste))   
+        print('*************************')     
+              
+def Altin():
+    pasteURL = "https://dovizborsa.com/altin/has"
+    data = urlopen(Request(pasteURL, headers={'User-Agent': 'Mozilla'})).read()
+    parse = BeautifulSoup(data,"html.parser")
+    for altin in parse.find_all('span',{'class': "-sl-"}):
+        liste = list(altin)
+        print("Güncel Altın Kuru: " + str(liste))
+    for altin in parse.find_all('span',{'class': "-cl-"}):
+        liste = list(altin)
+        print("Dunku Kapanıs Altin Kuru: " + str(liste))   
+        print('*************************')    
+        
+def Ceyrek_Altin():
+    pasteURL = "https://dovizborsa.com/altin/ceyrek"
+    data = urlopen(Request(pasteURL, headers={'User-Agent': 'Mozilla'})).read()
+    parse = BeautifulSoup(data,"html.parser")
+    for altin in parse.find_all('span',{'class': "-sl-"}):
+        liste = list(altin)    
+        print("Güncel Altın Kuru: " + str(liste))   
+    for altin in parse.find_all('span',{'class': "-cl-"}):
+        liste = list(altin)
+        print("Dunku Kapanıs Ceyrek Altin Kuru: " + str(liste))   
+        print('*************************')      
+  
+Dolar()
+Euro()
+Altin()
+Ceyrek_Altin()
