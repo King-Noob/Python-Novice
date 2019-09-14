@@ -13,11 +13,17 @@ set nu
 
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+
+Plug 'jiangmiao/auto-pairs'
+
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Better autocompletion
 Plug 'Shougo/neocomplcache.vim'
+
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
 
 
@@ -54,6 +60,12 @@ let g:neocomplcache_min_syntax_length = 1
 let g:neocomplcache_same_filetype_lists = {}
 let g:neocomplcache_same_filetype_lists._ = '_'
 
+let g:pymode_run = 1
+let g:pymode_run_bind = '<leader>r'
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_breakpoint_cmd = ''
+let mapleader = ","
 
 
 
