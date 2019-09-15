@@ -1,15 +1,19 @@
 syntax enable
 
-set background=dark
-colorscheme solarized
-set tabstop=4
-set shiftwidth=4
-set expandtab
 
 filetype indent on
 set autoindent
 " show line numbers
 set nu
+" ........................interface settings...........
+"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"colo dues
+set background=dark
+set t_Co=256
+"set termguicolors
+"let g:deus_termcolors=256
+"set cursorline
 
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
@@ -70,6 +74,44 @@ let mapleader = ","
 
 
 
+"---------------------------- Python Specific bindings ------------------------------------
+let python_highlight_all=1
+augroup vimrc_autocmds
+	autocmd!
+	autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+    autocmd FileType python match Excess /\%80v.*/
+    autocmd FileType python set nowrap
+	autocmd FileType html hi clear Excess
+	autocmd FileType htmldjango hi clear Excess
+augroup END
+"---------------------------- Python Specific bindings end  ---------------------------------
 
-let python_highlight_all = 1
-let g:molokai_original = 1
+"---------------------------- Airline Settings --------------------------------------------
+let g:airline_powerline_fonts                   = 1
+let g:airline#extensions#tabline#enabled        = 1
+let g:airline#extensions#syntastic#enabled      = 1
+let g:airline#extensions#fugitive#enabled      = 1
+let g:airline#extensions#tabline#show_buffers   = 1
+"let g:airline#extensions#tabline#show_tab_nr    = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#fnamemod       = ':t'
+let g:airline_theme='simple'
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_inactive_collapse=1
+let g:airline_mode_map = {
+            \ '__' : '-',
+            \ 'n'  : 'N',
+            \ 'i'  : 'I',
+            \ 'R'  : 'R',
+            \ 'c'  : 'C',
+            \ 'v'  : 'V',
+            \ 'V'  : 'V',
+            \ '' : 'V',
+            \ 's'  : 'S',
+            \ 'S'  : 'S',
+            \ '' : 'S',
+            \ }
+
+
+"---------------------------- Airline Settings End ----------------------------------------
