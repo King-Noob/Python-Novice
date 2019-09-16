@@ -71,6 +71,8 @@ let g:pymode_breakpoint_bind = '<leader>b'
 let g:pymode_breakpoint_cmd = ''
 let mapleader = ","
 
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_powerline_fonts = 1
 
 
 
