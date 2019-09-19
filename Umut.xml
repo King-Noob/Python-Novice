@@ -1,134 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
 
- This file is part of GtkSourceView
+<style-scheme id="Umut" _name="Umut-Dark" version="1.0">
 
- Copyright (C) 2007 GtkSourceView team
- Author: Paolo Borelli <pborelli@gnome.org>
+  <author>Jean-Patrick Guerrero</author>
+  <_description>Dark color scheme using the Gruvbox color palette</_description>
 
- GtkSourceView is free software; you can redistribute it and/or
- modify it under the terms of the GNU Lesser General Public
- License as published by the Free Software Foundation; either
- version 2.1 of the License, or (at your option) any later version.
+  <!--  Palette -->
 
- GtkSourceView is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- Lesser General Public License for more details.
+  <color name="dark0_hard"	value="#1d2021"/>
+  <color name="dark0"		value="#282828"/>
+  <color name="dark0_soft"	value="#32302f"/>
+  <color name="dark1"		value="#3c3836"/>
+  <color name="dark2"		value="#504945"/>
+  <color name="dark3"		value="#665c54"/>
+  <color name="dark4"		value="#7c6f64"/>
 
- You should have received a copy of the GNU Lesser General Public
- License along with this library; if not, write to the Free Software
- Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+  <color name="gray"		value="#928374"/>
 
--->
+  <color name="light0_hard"	value="#f9f5d7"/>
+  <color name="light0"		value="#fbf1c7"/>
+  <color name="light0_soft"	value="#f2e5bc"/>
+  <color name="light1"		value="#ebdbb2"/>
+  <color name="light2"		value="#d5c4a1"/>
+  <color name="light3"		value="#bdae93"/>
+  <color name="light4"		value="#a89984"/>
 
-<style-scheme id="oblivion" _name="Oblivion" version="1.0">
+  <color name="bright_red"	value="#fb4934"/>
+  <color name="bright_green"	value="#b8bb26"/>
+  <color name="bright_yellow"	value="#fabd2f"/>
+  <color name="bright_blue"	value="#83a598"/>
+  <color name="bright_purple"	value="#d3869b"/>
+  <color name="bright_aqua"	value="#8ec07c"/>
+  <color name="bright_orange"	value="#fe8019"/>
 
-  <author>Paolo Borelli</author>
-  <_description>Dark color scheme using the Tango color palette</_description>
+  <color name="neutral_red"	value="#cc241d"/>
+  <color name="neutral_green"	value="#98971a"/>
+  <color name="neutral_yellow"	value="#d79921"/>
+  <color name="neutral_blue"	value="#458588"/>
+  <color name="neutral_purple"	value="#b16286"/>
+  <color name="neutral_aqua"	value="#689d6a"/>
+  <color name="neutral_orange"	value="#d65d0e"/>
 
-  <!-- Tango Palette -->
-  <color name="butter1"                     value="#fce94f"/>
-  <color name="butter2"                     value="#edd400"/>
-  <color name="butter3"                     value="#c4a000"/>
-  <color name="chameleon1"                  value="#8ae234"/>
-  <color name="chameleon2"                  value="#73d216"/>
-  <color name="chameleon3"                  value="#4e9a06"/>
-  <color name="orange1"                     value="#fcaf3e"/>
-  <color name="orange2"                     value="#f57900"/>
-  <color name="orange3"                     value="#ce5c00"/>
-  <color name="skyblue1"                    value="#729fcf"/>
-  <color name="skyblue2"                    value="#3465a4"/>
-  <color name="skyblue3"                    value="#204a87"/>
-  <color name="plum1"                       value="#ad7fa8"/>
-  <color name="plum2"                       value="#75507b"/>
-  <color name="plum3"                       value="#5c3566"/>
-  <color name="chocolate1"                  value="#e9b96e"/>
-  <color name="chocolate2"                  value="#c17d11"/>
-  <color name="chocolate3"                  value="#8f5902"/>
-  <color name="scarletred1"                 value="#ef2929"/>
-  <color name="scarletred2"                 value="#cc0000"/>
-  <color name="scarletred3"                 value="#a40000"/>
-  <color name="aluminium1"                  value="#eeeeec"/>
-  <color name="aluminium2"                  value="#d3d7cf"/>
-  <color name="aluminium3"                  value="#babdb6"/>
-  <color name="aluminium4"                  value="#888a85"/>
-  <color name="aluminium5"                  value="#555753"/>
-  <color name="aluminium6"                  value="#2e3436"/>
-  <color name="white"                       value="#ffffff"/>
+  <color name="faded_red"	value="#9d0006"/>
+  <color name="faded_green"	value="#79740e"/>
+  <color name="faded_yellow"	value="#b57614"/>
+  <color name="faded_blue"	value="#076678"/>
+  <color name="faded_purple"	value="#8f3f71"/>
+  <color name="faded_aqua"	value="#427b58"/>
+  <color name="faded_orange"	value="#af3a03"/>
 
-  <color name="aluminium4-3-blend"          value="#a1a49e"/>
-  <color name="aluminium6-5-blend"          value="#34393A"/>
 
   <!-- Global Settings -->
-  <style name="text"                        foreground="aluminium2" background="aluminium6"/>
-  <style name="selection"                   foreground="aluminium1" background="aluminium4"/>
-  <style name="cursor"                      foreground="aluminium2"/>
-  <style name="secondary-cursor"            foreground="aluminium4-3-blend"/>
-  <style name="current-line"                background="aluminium5"/>
-  <style name="line-numbers"                foreground="aluminium5" background="#black"/>
-  <style name="draw-spaces"                 foreground="aluminium4"/>
-  <style name="background-pattern"          background="aluminium6-5-blend"/>
+  <style name="text"			foreground="#54fdeb" background="dark0"/>
+  <style name="selection"		foreground="light0" background="dark4"/>
+  <style name="cursor"			foreground="light1"/>
+  <style name="secondary-cursor"	foreground="light1"/>
+  <style name="current-line"		background="dark1"/>
+  <style name="line-numbers"		foreground="dark4" background="dark0_hard"/>
+  <style name="draw-spaces"		foreground="light2"/>
+  <style name="background-pattern"	background="#2e2c2b"/>
 
   <!-- Bracket Matching -->
-  <style name="bracket-match"               foreground="chocolate2"/>
-  <style name="bracket-mismatch"            foreground="aluminium1" background="scarletred2"/>
+  <style name="bracket-match"		foreground="bright_orange"/>
+  <style name="bracket-mismatch"	foreground="dark0" background="bright_red"/>
 
   <!-- Right Margin -->
-  <style name="right-margin"                foreground="aluminium1" background="aluminium3"/>
+  <style name="right-margin"		foreground="light0" background="light1"/>
 
   <!-- Search Matching -->
-  <style name="search-match"                foreground="aluminium1" background="chameleon3"/>
+  <style name="search-match"		foreground="dark0" background="bright_orange"/>
 
-  <!-- Comments -->
-  <style name="def:comment"                 foreground="aluminium4"/>
-  <style name="def:shebang"                 foreground="aluminium4" bold="true"/>
-  <style name="def:doc-comment-element"     italic="true"/>
+  <!-- Code -->
+  <style name="def:base-n-integer"	foreground="bright_purple"/>
+  <style name="def:boolean"		foreground="bright_purple"/>
+  <style name="def:builtin"		foreground="#ef2929"/>                     <!-- len str lıst olan kısmı degıstırıyor -->
+  <style name="def:character"		foreground="bright_purple"/>
+  <style name="def:comment"		foreground="gray"/>
+  <style name="def:complex"		foreground="bright_purple"/>
+  <style name="def:decimal"		foreground="#ff8bff"/>                      <!--rakamların rengını degıstırıyor -->
+  <style name="def:doc-comment"		foreground="gray"/>
+  <style name="def:doc-comment-element" italic="true"/>
+  <style name="def:error"		foreground="dark0" background="bright_red" bold="true"/>
+  <style name="def:floating-point"	foreground="bright_purple"/>
+  <style name="def:function"		foreground="bright_green"/>
+  <style name="def:identifier"		foreground="bright_blue"/>     
+  <style name="def:keyword"		foreground="#ff9d00"/>                  	 <!-- while for olan kısmı degıstırıyor -->
+  <style name="def:note"		foreground="gray"/>
+  <style name="def:number"		foreground="bright_purple"/>
+  <style name="def:operator"		foreground="bright_purple"/>
+  <style name="def:preprocessor"	foreground="bright_aqua"/>
+  <style name="def:reserved"		foreground="bright_aqua"/>
+  <style name="def:shebang"		foreground="gray"/>
+  <style name="def:special-char"	foreground="#fce94f"/> 				 <!--/n olan kısmı degıstırıyor -->
+  <style name="def:special-constant"	foreground="bright_purple"/>
+  <style name="def:statement"		foreground="bright_orange"/>
+  <style name="def:string"              foreground="#50fa7b"  background="#404040"/>    <!--parantez ıcındekı yazıları degıstırıyor -->
+  <style name="def:type"		foreground="bright_yellow"/>
+  <style name="def:underlined"		italic="true" underline="single"/>
+  <style name="def:warning"		foreground="dark0" background="bright_red"/>
 
-  <!-- Constants -->
-  <style name="def:constant"                foreground="butter2"/>
-  <style name="def:string"                  foreground="butter2"/>
-  <style name="def:special-char"            foreground="orange3"/>
-  <style name="def:special-constant"        foreground="orange3"/>
-  <style name="def:floating-point"          foreground="orange3"/>
-  <style name="def:number"                  foreground="#00c99b"    bold="true"/>
 
-  <!-- Identifiers -->
-  <style name="def:identifier"              foreground="skyblue1"/>
 
-  <!-- Statements -->
-  <style name="def:statement"               foreground="#63be43" bold="true"/>
-
-  <!-- Types -->
-  <style name="def:type"                    foreground="chameleon1" bold="true"/>
-
-  <!-- Others -->
-  <style name="def:preprocessor"            foreground="plum1"/>
-  <style name="def:error"                   foreground="aluminium1" background="scarletred2" bold="true"/>
-  <style name="def:warning"                 foreground="aluminium1" background="plum1"/>
-  <style name="def:note"                    background="butter1" foreground="aluminium4" bold="true"/>
-  <style name="def:underlined"              italic="true" underline="single"/>
-
-  <!-- Heading styles, uncomment to enable -->
-  <!--
-  <style name="def:heading0"                scale="5.0"/>
-  <style name="def:heading1"                scale="2.5"/>
-  <style name="def:heading2"                scale="2.0"/>
-  <style name="def:heading3"                scale="1.7"/>
-  <style name="def:heading4"                scale="1.5"/>
-  <style name="def:heading5"                scale="1.3"/>
-  <style name="def:heading6"                scale="1.2"/>
-  -->
-
-  <!-- Language specific -->
-  <style name="diff:added-line"             foreground="butter2"/>
-  <style name="diff:removed-line"           foreground="skyblue1"/>
-  <style name="diff:changed-line"           foreground="plum1"/>
-  <style name="diff:diff-file"              foreground="chameleon1" bold="true"/>
-  <style name="diff:location"               foreground="chameleon1"/>
-  <style name="diff:special-case"           foreground="white" bold="true"/>
-
-  <style name="latex:command"               foreground="chameleon1" bold="true"/>
-  <style name="latex:include"               use-style="def:preprocessor"/>
-
+  <!-- Python-specific stuff -->
+  <style name="python:module-handler" foreground="#7f70ff"/>
+  <style name="python:function-name" foreground="#ff8bff"/>
+  <style name="python:decorator" foreground="#50fa7b"/>
+  <style name="python:class-name" foreground="#50fa7b"/>
+  <style name="python:builtin-constant" foreground="#bd93f9"/>
+  <style name="python:special-variable" foreground="#8be9fd"/>
 </style-scheme>
